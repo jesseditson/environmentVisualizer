@@ -63,10 +63,6 @@ app.configure(function(){
     res.set('x-location',req.url)
     next()
   })
-  // main routes
-  app.use(app.router)
-  // add auth routes
-  auth.addRoutes(app)
   // static routes
   app.use(function(req,res,next){
     // allow all 
@@ -74,6 +70,10 @@ app.configure(function(){
     next()
   })
   app.use(ecstatic({root:__dirname + '/public'}))
+  // main routes
+  app.use(app.router)
+  // add auth routes
+  auth.addRoutes(app)
   // 404
   app.use(function(req,res){
     res.render('404',{status : 404})

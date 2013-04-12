@@ -1,0 +1,8 @@
+<%- layout('layout') -%>
+<h3>Select a chart</h3>
+
+<% availableFiles.forEach(function(file){ %>
+  <div class="file">
+    <a href="/visualize/<%=file.file%>"><%=file.name%></a>
+  </div>
+<% }) %>
