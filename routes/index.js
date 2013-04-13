@@ -29,7 +29,7 @@ module.exports = function(app){
       })
     },
     function(done){
-      wrench.readdirRecursive('datafiles',function(error,files){
+      wrench.readdirRecursive(__dirname + '/../datafiles',function(error,files){
         if(!files) return
         if(error) return done(error)
         ;(files || []).forEach(function(file){
