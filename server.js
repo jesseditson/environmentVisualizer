@@ -7,8 +7,6 @@ var fs = require('fs')
 var auth = require('./lib/authentication')
 var ejsHelpers = require('./lib/ejs-helpers')
 var toobusy = require('toobusy')
-var MongoStore = require('connect-mongo')(express);
-var db = require('./lib/mongoWrapper').db
 
 toobusy.maxLag(config.maxTooBusyLag || 70)
 
@@ -34,26 +32,6 @@ app.configure(function(){
   if(config.requestLogger !== false){
     app.use('logger',express.logger(config.environment == 'development' ? (typeof config.requestLogger != 'undefined' ? config.requestLogger : 'dev') : 'default'))
   }
-  var oneYear = 3600000 * 24 * 365
-  app.use(express.cookieParser())
-  app.use(express.session({
-    maxAge : new Date(Date.now() + oneYear),
-    expires : new Date(Date.now() + oneYear),
-    secret: 'super babby retrograde',
-    store: new MongoStore({
-      db: config.db.name,
-      collection : 'sessions',
-      host : config.db.host,
-      port : config.db.port,
-      username : config.db.user,
-      password : config.db.pass,
-      auto_reconnect : true
-    })
-  }))
-  app.use(express.bodyParser({uploadDir : './tmp'}))
-  // set up auth
-  app.use(auth.passport.initialize())
-  app.use(auth.passport.session())
   // set up templating
   app.use(ejsHelpers.middleware)
   app.use(express.methodOverride())
