@@ -4,7 +4,6 @@ var ecstatic = require('ecstatic')
 var http = require('http')
 var routes = require('./routes')
 var fs = require('fs')
-var auth = require('./lib/authentication')
 var ejsHelpers = require('./lib/ejs-helpers')
 var toobusy = require('toobusy')
 
@@ -50,8 +49,6 @@ app.configure(function(){
   app.use(ecstatic({root:__dirname + '/public'}))
   // main routes
   app.use(app.router)
-  // add auth routes
-  auth.addRoutes(app)
   // 404
   app.use(function(req,res){
     res.render('404',{status : 404})
