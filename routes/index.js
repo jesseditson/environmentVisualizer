@@ -1,4 +1,5 @@
 var wrench = require('wrench')
+var fs = require('fs')
 var async = require('async')
 
 var datafiles = []
@@ -29,7 +30,12 @@ module.exports = function(app){
       })
     },
     function(done){
-      wrench.readdirRecursive(__dirname + '/../datafiles',function(error,files){
+      var datafiles = __dirname + '/../datafiles'
+      if(!fs.existsSync(datafiles)){
+        console.error("ERROR: couldn't find the datafiles folder.")
+        return done()
+      }
+      wrench.readdirRecursive(datafiles,function(error,files){
         if(!files) return
         if(error) return done(error)
         ;(files || []).forEach(function(file){
