@@ -2,9 +2,45 @@
 <script>
 var vizData = <%- JSON.stringify(data) -%>
 </script>
-
-<div class="clock"></div>
-<div id="viz">
-
+<%- partial('date') -%>
+<div id="time">
+<div class="hours"></div>
+<div>:</div>
+<div class="minutes"></div>
 </div>
-<input id="timeslider" type="range" min="0" step="1"/>
+<div class="clock">
+  <%- partial('clock') -%>
+</div>
+<div id="currentTimeIndicator">
+  <div id="averageIndicator" class="temp"></div>
+</div>
+<div id="viz"></div>
+<ul id="ticks">
+</ul>
+<div id="stats">
+  <div id="temp">
+    <div class="big">
+  
+    </div>
+    <div class="indicator">
+      &#x2103;
+    </div>
+    <div class="avg">
+      Average:
+      <span></span>
+    </div>
+    </div>
+    <div id="humid">
+    <div class="big">
+  
+    </div>
+    <div class="indicator">
+      %
+    </div>
+    <div class="avg">
+      Average:
+      <span></span>
+    </div>
+  </div>
+</div>
+<div id="mouseIndicator"></div>

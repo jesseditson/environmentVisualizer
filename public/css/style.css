@@ -1,4 +1,145 @@
+body {
+  font-family:'FamiliarProBold',"Helvetica",Arial,sans-serif;
+  -webkit-user-select: none;
+  color: #888;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+  background: rgb(245, 248, 248);
+}
 #viz {
   width:100%;
   height:300px;
+  position:absolute;
+  top:90px;
+  z-index: 0;
+}
+.clock {
+  width:80px;
+  height:80px;
+  position:absolute;
+  right: 10px;
+  top: 10px;
+  padding: 10px;
+  z-index:50;
+  border-radius:5px;
+}
+#ticks {
+  width:100%;
+  height:50px;
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+  top:300px;
+  position:absolute;
+}
+#ticks .tick {
+  float:left;
+}
+#ticks .tick i {
+  width: 1px;
+  display: block;
+  height: 10px;
+  background-color: rgb(199, 196, 193);
+  margin: auto;
+}
+#currentTimeIndicator {
+  position:absolute;
+  left:50%;
+  width: 3px;
+  background-color: rgb(245, 248, 248);
+  height: 200px;
+  margin-left: -1px;
+  z-index: 100;
+  top: 90px;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 0px 0px -2px 0px rgba(0, 0, 0, 0.7);
+}
+
+.clock .dateholder div {
+  float:left;
+  font-size: 24px;
+  color:#f3f3f3
+;
+  margin-top: 7px;
+}
+.clock .dateholder .month {
+  margin-right: 9px;
+}
+#stats > div {
+  top: 315px;
+  position:absolute;
+  width: 90px;
+  margin:5px;
+  background:#fff url('/images/drop.png') no-repeat;
+  background-position: 10px 10px;
+  height: 75px;
+  border-radius:5px;
+  color: #2e989f;
+  box-shadow:0 0 7px -1px #999;
+  font-size: 80px;
+  padding: 30px;
+  -webkit-transition:100ms ease-out;
+}
+#stats .indicator {
+  position:absolute;
+  top: 40px;
+  right: 13px;
+  font-size:18px;
+}
+#stats .avg {
+  right:10px;
+  position:absolute;
+  font-size:18px;
+  bottom:10px;
+}
+#stats > div:active {
+  box-shadow: 0px 0 0px 0px;
+  font-size:85px;
+  padding-left:27px;
+  padding-top:27px;
+  padding-right:27px;
+  padding-bottom:27px;
+  width:97px;
+  height:80px;
+}
+#stats #temp {
+  left:160px;
+  background:#fff url('/images/sun.png') no-repeat;
+  color: rgb(255, 186, 0);
+  background-position: 10px 10px;
+}
+#time {
+  width: 70px;
+  top: 30px;
+  position:absolute;
+  left: 50%;
+  font-size:24px;
+  margin-left: -28px;
+}
+#time div {
+  float:left;
+}
+
+#averageIndicator {
+  position:absolute;
+  height:0px;
+  width:100%;
+  top:50%;
+  margin-top:0px;
+}
+#averageIndicator.temp {
+  background-color:rgb(255, 186, 0);
+}
+#averageIndicator.humid {
+  background-color:#2e989f;
+}
+
+#mouseIndicator {
+  border-radius:50%;
+  background-color:rgb(46, 152, 159);
+  background-color:rgba(46, 152, 159,0.4);
+  display:none;
+  width:50px;
+  height:50px;
+  position:absolute;
 }

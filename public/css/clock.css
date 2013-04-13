@@ -1,7 +1,4 @@
 /* global */
-.clock {
-margin: 4em;
-}
 .clock b {
 display: block;
 width: 100%;
@@ -13,8 +10,8 @@ position: relative;
 }
 /* dial clock */
 .clock .dial.inner {
-width: 251px;
-height: 251px;
+width: 60px;
+height: 60px;
 }
 .clock .dial .shadow {
 position: absolute;
@@ -29,11 +26,11 @@ border-radius: 50%;
 .clock .dial .shadow-out {
 margin: -9% 0 0 -9%;
 padding: 9%;
--webkit-box-shadow: 0px 10px 30px #747788;
--moz-box-shadow: 0px 10px 30px #747788;
--ms-box-shadow: 0px 10px 30px #747788;
--o-box-shadow: 0px 10px 30px #747788;
-box-shadow: 0px 10px 30px #747788;
+-webkit-box-shadow: 0px 0px 6px -1px #747788;
+-moz-box-shadow: 0px 0px 6px -1px #747788;
+-ms-box-shadow: 0px 0px 6px -1px #747788;
+-o-box-shadow: 0px 0px 6px -1px #747788;
+box-shadow: 0px 0px 6px -1px #747788;
 background: #fff;
 background: -webkit-linear-gradient(-90deg, #fff, #eaebed);
 background: -moz-linear-gradient(-90deg, #fff, #eaebed);
@@ -152,17 +149,6 @@ height: 37%;
 top: 13%;
 background-color: #000;
 }
-.clock .dial .arr b:nth-child(5)
-, .clock .dial .arr b:nth-child(7) {
-width: 1%;
-min-width: 1px;
-margin-left: -0.3%;
-}
-.clock .dial .arr b:nth-child(5):after
-, .clock .dial .arr b:nth-child(7):after {
-height: 67%;
-background-color: #d70000;
-}
 .clock .dial .arr b:nth-child(6)
 , .clock .dial .arr b:nth-child(8) {
 width: 8%;
@@ -172,7 +158,7 @@ margin-left: -3.9%;
 , .clock .dial .arr b:nth-child(8):after {
 height: 8%;
 top: 46%;
-background-color: #d70000;
+background-color: #000;
 -webkit-border-radius: 50%;
 -moz-border-radius: 50%;
 -ms-border-radius: 50%;
@@ -200,40 +186,18 @@ margin-top: 1.5%;
 margin-top: 2%;
 }
 .clock .dial .arr b {
--webkit-animation-iteration-count: infinite;
--webkit-animation-timing-function: linear;
--moz-animation-iteration-count: infinite;
--moz-animation-timing-function: linear;
--ms-animation-iteration-count: infinite;
--ms-animation-timing-function: linear;
--o-animation-iteration-count: infinite;
--o-animation-timing-function: linear;
-animation-iteration-count: infinite;
-animation-timing-function: linear;
+-webkit-transition-timing-function: ease-in-out;
+transition-timing-function: ease-in-out;
 }
 .clock .dial .arr b:nth-child(1)
 , .clock .dial .arr b:nth-child(2) {
--webkit-animation-duration: 43200s;
--moz-animation-duration: 43200s;
--ms-animation-duration: 43200s;
--o-animation-duration: 43200s;
-animation-duration: 43200s;
+-webkit-transition-duration: 200ms;
+transition-duration: 200ms;
 }
 .clock .dial .arr b:nth-child(3)
 , .clock .dial .arr b:nth-child(4) {
--webkit-animation-duration: 3600s;
--moz-animation-duration: 3600s;
--ms-animation-duration: 3600s;
--o-animation-duration: 3600s;
-animation-duration: 3600s;
-}
-.clock .dial .arr b:nth-child(5)
-, .clock .dial .arr b:nth-child(7) {
--webkit-animation-duration: 60s;
--moz-animation-duration: 60s;
--ms-animation-duration: 60s;
--o-animation-duration: 60s;
-animation-duration: 60s;
+-webkit-transition-duration: 220ms;
+transition-duration: 220ms;
 }
 	
 	

@@ -1,0 +1,19 @@
+.calendar { width: 54px; font-size: 0.8em; 
+        background: -moz-linear-gradient(top, #f9f9f9, #e6e6e6);
+        height: 50px; position: absolute; top: 15px; left: 25px;
+}
+
+	.calendar > span { display: block; }
+
+	.calendar > .month {
+	  text-align: center; padding: 2px 5px 2px 0; 
+	  font-size: 20px; 
+      color: #999; font-weight: bold;
+		}
+
+	.calendar > .day { text-align: center; font-weight: bold; font-size: 44px; 
+		-webkit-border-bottom-left-radius:  5px;
+	    -moz-border-radius-bottomleft:      5px;
+	    -webkit-border-bottom-right-radius: 5px;
+	    -moz-border-radius-bottomright:     5px;
+		}
