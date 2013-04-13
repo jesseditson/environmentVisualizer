@@ -30,13 +30,13 @@ module.exports = function(app){
       })
     },
     function(done){
-      var datafiles = __dirname + '/../datafiles'
-      if(!fs.existsSync(datafiles)){
+      var datafilePath = __dirname + '/../datafiles'
+      if(!fs.existsSync(datafilePath)){
         console.error("ERROR: couldn't find the datafiles folder.")
         console.log(fs.readdirSync(__dirname + '/../'))
         return done()
       }
-      wrench.readdirRecursive(datafiles,function(error,files){
+      wrench.readdirRecursive(datafilePath,function(error,files){
         if(!files) return
         if(error) return done(error)
         ;(files || []).forEach(function(file){
