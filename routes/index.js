@@ -34,7 +34,6 @@ module.exports = function(app){
       if(!fs.existsSync(datafiles)){
         console.error("ERROR: couldn't find the datafiles folder.")
         console.log(fs.readdirSync(__dirname + '/../'))
-        console.log(fs.readdirSync(datafiles))
         return done()
       }
       wrench.readdirRecursive(datafiles,function(error,files){
