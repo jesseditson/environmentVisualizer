@@ -12,7 +12,8 @@ var render = function(req,res,err,data){
 
 var visualize = function(req,res,next){
   var filename = path.join(__dirname, datafilePath, decodeURIComponent(req.params.filename))
-  
+  console.log(filename)
+  console.log(fs.readdirSync(path.join(__dirname,datafilePath)))
   // csv stream
   var data = []
   csv()
