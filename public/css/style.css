@@ -1,9 +1,11 @@
 body {
   font-family:'FamiliarProBold',"Helvetica",Arial,sans-serif;
-  -webkit-user-select: none;
   color: #888;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
   background: rgb(245, 248, 248);
+}
+body * {
+  -webkit-user-select: none;
 }
 #viz {
   width:100%;

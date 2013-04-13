@@ -9,7 +9,8 @@
       "web" : []
     },
     "cdnjavascripts" : {
-      "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" : "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+      "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" : true,
+      "http://cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.0/fastclick.min.js" : true
     },
     "javascripts" : [
       "raphael.js",

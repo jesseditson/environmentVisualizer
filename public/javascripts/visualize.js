@@ -81,12 +81,23 @@
       updateAverage(number,newClass)
     })
     
+    var down = false
     $("body")
-      .on('mousedown',function(e){
+      .on('mousedown touchstart',function(e){
+        if(down) return false
+        try {
+          e.clientX = e.originalEvent.touches[0].clientX
+          e.clientY = e.originalEvent.touches[0].clientY
+        } catch(e){}
+        down = true
         var startPos = [e.clientX,e.clientY]
         var mouseIndicator = $("#mouseIndicator").fadeIn(200)
         mouseIndicator.css({left : startPos[0] - mouseIndicator.width()/2,top : startPos[1] - mouseIndicator.height()/2})
-        $("body").on('mousemove',function(e){
+        $("body").on('mousemove touchmove',function(e){
+          try {
+            e.clientX = e.originalEvent.touches[0].clientX
+            e.clientY = e.originalEvent.touches[0].clientY
+          } catch(e){}
           var newPos = [e.clientX,e.clientY]
           mouseIndicator.css({left : newPos[0] - mouseIndicator.width()/2,top : newPos[1] - mouseIndicator.height()/2})
           // figure out direction of move
@@ -115,10 +126,13 @@
             }
           }
           startPos = newPos
+          // don't fire scroll events
+          return false
         })
       })
-      .on('mouseup',function(e){
-        $("body").off('mousemove')
+      .on('mouseup touchend',function(e){
+        $("body").off('mousemove touchmove')
+        down = false
         $("#mouseIndicator").fadeOut(200)
       })
     })
